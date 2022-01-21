@@ -8,7 +8,7 @@ FAPESP (2020). FAPESP COVID-19 Data Sharing/BR, Available from https://repositor
 
 I developed this script as an exercise to gain experience performing data analysis with Python and to familiarize myself with data analysis and visualization libraries. In addition to importing the data to a pandas dataframe and describing the dataset, I produced several plots based on COVID-19 test result status and performed statistical tests for white blood cell and platelet counts by COVID-19 test result.
 
-[Software Demo Video]()
+[Software Demo Video](https://youtu.be/55hOG2PYgmE)
 
 # Data Analysis Results
 

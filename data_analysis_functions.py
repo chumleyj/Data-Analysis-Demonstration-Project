@@ -133,7 +133,7 @@ def plot_wbc_abs_diff(df):
                 )
                 # set subplot labels
                 ax.set_title(ax_name[i])
-                ax.set_ylabel('10^3 Cells / uL')
+                ax.set_ylabel('Cells / uL')
                 ax.set_ylim(bottom=0, top=(ax.get_ylim()[1] * 1.1))
             else:
                 # otherwise turn off the axis
