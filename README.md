@@ -6,8 +6,7 @@ The dataset for this project is from Hospital Israelita Albert Einstien in São 
 
 FAPESP (2020). FAPESP COVID-19 Data Sharing/BR, Available from https://repositoriodatasharingfapesp.uspdigital.usp.br/
 
-I developed this script as an exercise to gain experience performing data analysis with Python and to 
-familiarize myself with data analysis and visualization libraries. In addition to importing the data to a pandas dataframe and describing the dataset, I produced several plots based on COVID-19 test result status and performed statistical tests for white blood cell and platelet counts by COVID-19 test result.
+I developed this script as an exercise to gain experience performing data analysis with Python and to familiarize myself with data analysis and visualization libraries. In addition to importing the data to a pandas dataframe and describing the dataset, I produced several plots based on COVID-19 test result status and performed statistical tests for white blood cell and platelet counts by COVID-19 test result.
 
 [Software Demo Video]()
 
@@ -30,13 +29,12 @@ I approached this dataset with two questions:
 * Python 3.9.7 64-bit
     * Pandas v1.3.5
     * SciPy v1.7.3
-    * Numpy v1.22.1
+    * NumPy v1.22.1
     * Matplotlib v3.5.1
 * Git / GitHub
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
 * [Python Documentation, v.3.9](https://docs.python.org/3.9/)
 * [Pandas Documentation, v1.3.5](https://pandas.pydata.org/docs/index.html)
 * [SciPy Documentation, v1.7.3](https://docs.scipy.org/doc/scipy/index.html#)

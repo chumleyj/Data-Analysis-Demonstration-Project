@@ -22,7 +22,7 @@ def plot_cell_counts(df):
 
     # plot WBC count by COVID neg or COVID pos result
     wbc_ax.boxplot(plot_by_covid(df, 'WBC'),
-                #showfliers=False,
+                showfliers=False,
                 widths=0.4,
                 labels=['COVID Neg', 'COVID Pos'],
     )
@@ -33,7 +33,7 @@ def plot_cell_counts(df):
 
     # plot RBC count by COVID neg or COVID pos result
     rbc_ax.boxplot(plot_by_covid(df, 'RBC'),
-                #showfliers=False,
+                showfliers=False,
                 widths=0.4,
                 labels=['COVID Neg', 'COVID Pos']
     )
@@ -44,7 +44,7 @@ def plot_cell_counts(df):
 
     # plot PLT count by COVID neg or COVID pos result
     plt_ax.boxplot(plot_by_covid(df, 'PLT'),
-                #showfliers=False,
+                showfliers=False,
                 widths=0.4,
                 labels=['COVID Neg', 'COVID Pos']
     )
@@ -209,10 +209,10 @@ The COVID positive population median WBC count is {covid_wbc.median():.2f} x 10^
 having a higher median WBC count than populations with a positive COVID 
 test has a p-value of {p_value:.2e}.""")
     if p_value < 0.05:
-        print("""The hypothesis that populations with a negative COVID test have
+        print("""\nThe hypothesis that populations with a negative COVID test have
 a higher median WBC count is statistically significant.""")
     else:
-        print("The difference in medians between these populations is not statistically significant")
+        print("\nThe difference in medians between these populations is not statistically significant")
 
 # this function calculates the median platelet count for COVID negative and positive
 # populations, then performs a Mann-Whitney-Wilcoxan test to determine if there
@@ -235,10 +235,10 @@ The COVID positive population median platelet count is {covid_plt.median():.2f} 
 having a higher median platelet count than patients with a positive COVID
 test has a p-value of {p_value:.2e}.""")
     if p_value < 0.05:
-        print("""The hypothesis that populations with a negative COVID test have
+        print("""\nThe hypothesis that populations with a negative COVID test have
 a higher median platelet count is statistically significant.""")
     else:
-        print("The difference in medians between these populations is not statistically significant")
+        print("\nThe difference in medians between these populations is not statistically significant")
     
     # create a contingency table of paltlete results below the reference range and COVID result
     platelet_contingency = pd.crosstab(df['PLTref'], df['COVID'])
@@ -257,15 +257,21 @@ The frequency of a low platelet count in the COVID positive population is {low_p
 a platelet count below the reference range (<150 x 10^3 platelets/uL) a p-value 
 of {chi2_result[1]:.2e}.""")
     if chi2_result[1] < 0.05:
-        print("""The hypothesis that a low platelet count occurs more frequently in 
+        print("""\nThe hypothesis that a low platelet count occurs more frequently in 
 populations with a postiive COVID test result than expected by chance is statistically
 significant.""")
     else:
-        print("A low platelet count is not related to COVID test results in this dataset.")
+        print("\nA low platelet count is not related to COVID test results in this dataset.")
 
 # This function provides a summary of the dataset
 def summarize_dataset(df):
     print(f"\nNumber of entries: {df.shape[0]}")
-    print(f"Percent COVID Positive: {(df['COVID'].value_counts()[1] / df.shape[0] * 100):.1f}")
-    print(df.info(verbose=True))
+    print(f"Percent by Sex: {(df['Sex'].value_counts()[0] / df.shape[0] * 100):.1f}% Female, {(df['Sex'].value_counts()[1] / df.shape[0] * 100):.1f}% Male" )
+    print(f"Average age: {df['Age'].mean():.1f} years (min: {df['Age'].min():.1f}, max: {df['Age'].max():.1f})")
+    print(f"Percent COVID Positive: {(df['COVID'].value_counts()[1] / df.shape[0] * 100):.1f}%")
+    print("Data fields: \n\t", end="")
+    for col in df.columns:
+        print (col, end=", ")
+    print()
+
     
